@@ -61,9 +61,6 @@ public abstract class Aplicant{
 	public int getNr_proiecte() {
 		return nr_proiecte;
 	}
-	public void setNr_proiecte(int nr_proiecte) {
-		this.nr_proiecte = nr_proiecte;
-	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -81,6 +78,13 @@ public abstract class Aplicant{
 		builder.append(Arrays.toString(denumireProiect));
 		builder.append("]");
 		return builder.toString();
+	}
+	public String[] getDenumireProiect() {
+		return denumireProiect;
+	}
+	public void setDenumiriProiecte(String[] denumireProiect, int nr_proiecte) {
+		this.nr_proiecte = nr_proiecte;
+		this.denumireProiect = denumireProiect;
 	}
 
 	

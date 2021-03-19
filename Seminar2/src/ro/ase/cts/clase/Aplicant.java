@@ -6,7 +6,7 @@ public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
 	protected int varsta;
-	protected int punctaj;
+	protected int punctajProiect;
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
 	
@@ -29,17 +29,22 @@ public abstract class Aplicant{
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
 	}
-	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
-		}
-	public int getPunctaj() {
-		return punctaj;
+	
+	public void afiseazaStatutAplicant(Proiect proiect) {
+		boolean eAcceptat = punctajProiect >= proiect.getPragAcceptare();
+		StringBuilder sb = new StringBuilder();
+		sb.append("Aplicantul ");
+		sb.append(this.nume);
+		sb.append(" ");
+		sb.append(this.prenume);
+		sb.append(eAcceptat ? " a fost acceptat." : " nu a fost acceptat.");
+		System.out.println(sb.toString());
 	}
-	public void setPunctaj(int punctaj) {
-		this.punctaj = punctaj;
+	public int getPunctaj() {
+		return punctajProiect;
+	}
+	public void setPunctaj(int punctajProiect) {
+		this.punctajProiect = punctajProiect;
 	}
 	
 	
@@ -54,7 +59,7 @@ public abstract class Aplicant{
 		this.nume = nume;
 		this.prenume = prenume;
 		this.varsta = varsta;
-		this.punctaj = punctaj;
+		this.punctajProiect = punctaj;
 		this.nr_proiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
@@ -71,7 +76,7 @@ public abstract class Aplicant{
 		builder.append(", varsta=");
 		builder.append(varsta);
 		builder.append(", punctaj=");
-		builder.append(punctaj);
+		builder.append(punctajProiect);
 		builder.append(", nr_proiecte=");
 		builder.append(nr_proiecte);
 		builder.append(", denumireProiect=");
@@ -86,7 +91,8 @@ public abstract class Aplicant{
 		this.nr_proiecte = nr_proiecte;
 		this.denumireProiect = denumireProiect;
 	}
-
+	
+	public abstract float getSumaFinantare();
 	
 	
 }

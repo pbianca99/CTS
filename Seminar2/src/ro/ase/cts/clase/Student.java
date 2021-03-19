@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Student extends Aplicant {
 	protected String facultate;
 	protected int an_studii;
-	
+	private static float sumaFinantare = 20;
 	
 	public String getFacultate() {
 		return facultate;
@@ -20,6 +20,9 @@ public class Student extends Aplicant {
 		this.an_studii = an_studii;
 	}
 
+	public float getSumaFinantare() {
+		return sumaFinantare;
+	}
 
 	public Student() {
 		super();
@@ -40,11 +43,5 @@ public class Student extends Aplicant {
 		return sb.toString();
 	}
 	
-	
-	public int finantare() {
-		int s=20;
-		System.out.println("Studentul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
-	}
 	
 }

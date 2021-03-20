@@ -18,6 +18,12 @@ public class MainClass {
 		ro.ase.cts.singletonlazy.AsigurareMedicala asigurareLazy2 = ro.ase.cts.singletonlazy.AsigurareMedicala.getInstance(4, "Maria", 99.9f);
 		System.out.println(asigurareLazy1.toString());
 		System.out.println(asigurareLazy2.toString());
+		
+		ro.ase.cts.pi.Piesa piesa1 = ro.ase.cts.pi.Piesa.getInstance("Morometii 1", 125, false);
+		ro.ase.cts.pi.Piesa piesa2 = ro.ase.cts.pi.Piesa.getInstance("Morometii 2", 125, true);
+		piesa1.setDurata(80);
+		System.out.println(piesa1.toString());
+		System.out.println(piesa2.toString());
 	}
 
 }

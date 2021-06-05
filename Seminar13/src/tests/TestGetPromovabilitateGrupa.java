@@ -4,14 +4,17 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import clase.Grupa;
 import clase.Student;
 import mockuri.StudentDummy;
+import tests.suite.categorii.TestePromovabilitateCategory;
 
 public class TestGetPromovabilitateGrupa {
 	
 	@Test
+	@Category(TestePromovabilitateCategory.class)
 	public void testRight() {
 		Grupa grupa = new Grupa(1085);
 		for(int i = 0; i < 3; i++) {
